@@ -20,11 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Blog: http://blog.yjl.im/2013/07/pipesxsh-animated-pipessh-terminal.html
-# Gist: https://gist.github.com/livibetter/5974905
-# Screenshot: https://lh3.googleusercontent.com/-UaCta_DtgrQ/Ud6dqIgcfmI/AAAAAAAAE_8/VXPac0OpULU/s800/pipesX.sh.gif
-# Screenshot: https://lh6.googleusercontent.com/-yBety-A8J_c/Ud6dk10sjBI/AAAAAAAAE_0/S98aRRV8t0s/s800/pipesX.sh%25202013-07-11--19%253A51%253A05.png
-# Screencast: http://youtu.be/dITTlFPYVPA
+# Website: https://github.com/livibetter/pipesX.sh
 
 W=$(tput cols) H=$(tput lines)
 # maximal random value + 1
