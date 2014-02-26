@@ -22,6 +22,8 @@
 #
 # Website: https://github.com/livibetter/pipesX.sh
 
+VERSION=0.0.0
+
 W=$(tput cols) H=$(tput lines)
 # maximal random value + 1
 M=32768
@@ -50,9 +52,10 @@ Options:
   -C          no color.
   -X          maze generation.
   -h          this help message.
+  -v          print version number.
 "
 
-while getopts "n:t:i:P:r:RCXh" arg; do
+while getopts "n:t:i:P:r:RCXhv" arg; do
   case $arg in
     n)
       ((N = OPTARG > 0 ? OPTARG : N))
@@ -82,6 +85,9 @@ while getopts "n:t:i:P:r:RCXh" arg; do
       echo -e "$HELP"
       exit 0
       ;;
+    v)
+      echo "$(basename -- "$0") $VERSION"
+      exit 0
   esac
 done
 

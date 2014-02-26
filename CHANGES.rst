@@ -6,6 +6,7 @@ CHANGES
 Development
 ===========
 
+* add versioning functionality
 * allow multiple ``-t`` usage
 
 
