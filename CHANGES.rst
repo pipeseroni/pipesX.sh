@@ -6,6 +6,10 @@ CHANGES
 Development
 ===========
 
+
+Version 0.1.0 (2014-02-26T10:57:32Z)
+====================================
+
 * add versioning functionality
 * allow multiple ``-t`` usage
 

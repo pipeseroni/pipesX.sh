@@ -1,6 +1,6 @@
 #!/bin/bash
 # Animated pipes.sh terminal screensaver at an angle.
-# Copyright (C) 2013 by Yu-Jie Lin
+# Copyright (C) 2013, 2014 by Yu-Jie Lin
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -22,7 +22,7 @@
 #
 # Website: https://github.com/livibetter/pipesX.sh
 
-VERSION=0.0.0
+VERSION=0.1.0
 
 W=$(tput cols) H=$(tput lines)
 # maximal random value + 1
