@@ -151,6 +151,12 @@ Maze generation.
 Help message.
 
 
+``-v``
+------
+
+Print version number.
+
+
 Copyright
 =========
 
