@@ -3,6 +3,12 @@ CHANGES
 =======
 
 
+Development
+===========
+
+* allow multiple ``-t`` usage
+
+
 2014-02-21
 ==========
 

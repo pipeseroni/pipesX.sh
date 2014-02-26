@@ -31,7 +31,7 @@ COLORS=(31 32 33 34 35 36 37)
 
 # default values
 N=1
-T=0
+T=()
 I=0.05
 P=25
 R=$((W * H / 4))
@@ -42,7 +42,7 @@ Animated pipes.sh terminal screensaver at an angle.
 Options:
 
   -n [1-]     number of pipes. (Default: $N)
-  -t [0-$((${#SETS[@]} - 1))]    type of pipes. (Default: $T)
+  -t [0-$((${#SETS[@]} - 1))]    types of pipes, can be used more than once. (Default: $T)
   -i [float]  piping interval or maze generation interval. (Default: $I)
   -P [0-100]  probability of a turning pipe or of \\ in maze generation. (Default: $P)
   -r [LIMIT]  reset after x characters, 0 if no limit. (Default: $R)
@@ -58,7 +58,7 @@ while getopts "n:t:i:P:r:RCXh" arg; do
       ((N = OPTARG > 0 ? OPTARG : N))
       ;;
     t)
-      ((T = (OPTARG >= 0 && OPTARG < ${#SETS[@]}) ? OPTARG : T))
+      T+=($(((OPTARG >= 0 && OPTARG < ${#SETS[@]}) ? OPTARG : T)))
       ;;
     i)
       I=$OPTARG
@@ -84,6 +84,9 @@ while getopts "n:t:i:P:r:RCXh" arg; do
       ;;
   esac
 done
+
+# set to default values if not by options
+((${#T[@]})) || T=(0)
 
 do_exit() {
   # Show cursor and echo stdin
@@ -113,6 +116,7 @@ for ((n = 0; n < N; n++)); do
   ((Y[n] = RNDSTART ? (H + 2) * RANDOM / M : H / 2))
   D[n]=$((4 * RANDOM / M))
   C[n]=${COLORS[${#COLORS[@]} * RANDOM / M]}
+  t[n]=${T[${#T[@]} * RANDOM / M]}
 done
 
 clear
@@ -154,6 +158,7 @@ while :; do
     ((d > 1 && y == H)) && ((yn++, CC=1))
     ((e < 2 && x == W)) && ((xn++, CC=1))
     ((CC)) && c=${COLORS[${#COLORS[@]} * RANDOM / M]}
+    ((CC)) && t[n]=${T[${#T[@]} * RANDOM / M]}
 
     # warp pipe
     ((xn = (xn + W + 1) % (W + 1)))
@@ -170,7 +175,7 @@ while :; do
 
     echo -ne "\e[${yt};${xt}H"
     [[ $NOCOLOR ]] || echo -ne "\e[1;${c}m"
-    echo -n "${SETS[T]:d%2:1}"
+    echo -n "${SETS[t[n]]:d%2:1}"
 
     X[n]=$xn Y[n]=$yn
     D[n]=$d C[n]=$c

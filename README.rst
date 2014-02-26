@@ -65,7 +65,7 @@ Number of pipes (Default: 1).
 ``-t [#]``
 ----------
 
-Type of pipes (Default: 0).
+Types of pipes, can be used more than once (Default: 0).
 
 .. note on taking the screenshots
 
