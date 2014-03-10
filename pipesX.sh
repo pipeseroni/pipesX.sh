@@ -99,6 +99,7 @@ do_exit() {
   echo -ne "\e[?25h"
   stty echo
   clear
+  echo -ne "\e[0m"
   exit 0
   }
 trap do_exit INT TERM
