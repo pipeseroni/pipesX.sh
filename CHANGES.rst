@@ -6,6 +6,10 @@ CHANGES
 Development
 ===========
 
+
+Version 0.1.1 (2014-03-19T03:26:51Z)
+====================================
+
 * fix leftover color escape code
 * fix exit key and render issues in Bash < 4 (livibetter/pipes.sh#1,
   livibetter/pipes.sh#4)
