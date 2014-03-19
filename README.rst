@@ -157,11 +157,17 @@ Help message.
 Print version number.
 
 
+Controls
+========
+
+Press any key to exit, except in Bash < 4, Control + C to exit.
+
+
 Copyright
 =========
 
 pipesX.sh is licensed under `the MIT License`__::
 
-  Copyright (C) 2013 by Yu-Jie Lin
+  Copyright (C) 2013, 2014 by Yu-Jie Lin
 
 __ LICENSE

@@ -94,6 +94,8 @@ done
 # set to default values if not by options
 ((${#T[@]})) || T=(0)
 
+[[ $BASH_VERSION = [1-3]* ]] && SLEEP="sleep $I" || SLEEP="read -t $I -n 1"
+
 do_exit() {
   # Show cursor and echo stdin
   echo -ne "\e[?25h"
@@ -102,7 +104,8 @@ do_exit() {
   echo -ne "\e[0m"
   exit 0
   }
-trap do_exit INT TERM
+trap do_exit HUP TERM
+trap 'break 2' INT
 
 # No echo stdin and hide the cursor
 stty -echo
@@ -127,7 +130,7 @@ for ((n = 0; n < N; n++)); do
 done
 
 clear
-while :; do
+while REPLY=; $SLEEP; [[ -z $REPLY ]] ; do
   for ((n = 0; n < N; n++, CC = 0)); do
     x=${X[n]} y=${Y[n]}
     d=${D[n]} c=${C[n]}
@@ -187,7 +190,6 @@ while :; do
     X[n]=$xn Y[n]=$yn
     D[n]=$d C[n]=$c
   done
-  read -t $I -n 1 && [[ $REPLY =~ q|Q ]] && do_exit
   ((R)) && ((r += N, r >= R)) && r=0 && clear
 done
 

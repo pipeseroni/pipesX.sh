@@ -7,6 +7,8 @@ Development
 ===========
 
 * fix leftover color escape code
+* fix exit key and render issues in Bash < 4 (livibetter/pipes.sh#1,
+  livibetter/pipes.sh#4)
 
 
 Version 0.1.0 (2014-02-26T10:57:32Z)
