@@ -6,6 +6,10 @@ CHANGES
 Development
 ===========
 
+
+Version 1.0.0 (2015-04-09T02:47:34Z)
+====================================
+
 * drop Bash 3- support
 
   The last commit for Bash 3- is ``0600773a30038cf552b417442c1a443297773323``
@@ -13,6 +17,8 @@ Development
 
 * fix keys like arrow keys or ``Ctrl+Alt+A`` halt on exiting
   (livibetter/pipes.sh#12)
+
+* screen is saved and restored with ``smcup`` and ``rmcup``
 
 
 Version 0.1.1 (2014-03-19T03:26:51Z)
