@@ -34,6 +34,12 @@ that is piping at an angle.
 .. _pipes.sh: https://github.com/livibetter/pipes.sh
 
 
+Requirements
+============
+
+* Bash 4+ since version 1.0.0.
+
+
 Installation
 ============
 

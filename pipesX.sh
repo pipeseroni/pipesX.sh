@@ -94,14 +94,17 @@ done
 # set to default values if not by options
 ((${#T[@]})) || T=(0)
 
-[[ $BASH_VERSION = [1-3]* ]] && SLEEP="sleep $I" || SLEEP="read -t $I -n 1"
-
 do_exit() {
-  # Show cursor and echo stdin
-  echo -ne "\e[?25h"
+  # clear up standard input
+  read -t 0.001 && cat </dev/stdin>/dev/null
+
+  # terminal has no smcup and rmcup capabilities
+  ((FORCE_RESET)) && reset && exit 0
+
+  tput rmcup
+  tput cnorm
   stty echo
-  clear
-  echo -ne "\e[0m"
+  ((NOCOLOR)) && echo -ne '\e[0m'
   exit 0
   }
 trap do_exit HUP TERM
@@ -109,7 +112,9 @@ trap 'break 2' INT
 
 # No echo stdin and hide the cursor
 stty -echo
-echo -ne "\e[?25l"
+tput smcup || FORCE_RESET=1
+tput civis
+tput clear
 
 # maze geneartion
 while [[ $MAZE ]] && clear; do
@@ -130,7 +135,7 @@ for ((n = 0; n < N; n++)); do
 done
 
 clear
-while REPLY=; $SLEEP; [[ -z $REPLY ]] ; do
+while REPLY=; read -t $I -n 1; [[ -z $REPLY ]] ; do
   for ((n = 0; n < N; n++, CC = 0)); do
     x=${X[n]} y=${Y[n]}
     d=${D[n]} c=${C[n]}
