@@ -22,7 +22,7 @@
 #
 # Website: https://github.com/pipeseroni/pipesX.sh
 
-VERSION=1.0.0
+VERSION=1.1.0
 
 W=$(tput cols) H=$(tput lines)
 # maximal random value + 1
