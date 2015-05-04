@@ -6,6 +6,10 @@ CHANGES
 Development
 ===========
 
+* move to new GitHub_
+
+.. _GitHub: https://github.com/pipeseroni/pipesX.sh
+
 
 Version 1.0.0 (2015-04-09T02:47:34Z)
 ====================================
@@ -39,9 +43,7 @@ Version 0.1.0 (2014-02-26T10:57:32Z)
 2014-02-21
 ==========
 
-* move to GitHub_
-
-.. _GitHub: https://github.com/livibetter/pipesX.sh
+* move to GitHub: ``https://github.com/livibetter/pipesX.sh``
 
 
 2013-07-11

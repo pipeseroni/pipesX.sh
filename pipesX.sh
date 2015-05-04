@@ -20,7 +20,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 #
-# Website: https://github.com/livibetter/pipesX.sh
+# Website: https://github.com/pipeseroni/pipesX.sh
 
 VERSION=1.0.0
 

@@ -31,7 +31,7 @@ How this started
 In 2013, I modified the pipes.sh_ and it inspired me to create this version,
 that is piping at an angle.
 
-.. _pipes.sh: https://github.com/livibetter/pipes.sh
+.. _pipes.sh: https://github.com/pipeseroni/pipes.sh
 
 
 Requirements
