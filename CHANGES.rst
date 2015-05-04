@@ -7,6 +7,8 @@ Development
 ===========
 
 * move to new GitHub_
+* add ``-t c[2 chars]`` for custom type
+* add ``-t 2``, ``-t 3``, and ``-t 4``
 
 .. _GitHub: https://github.com/pipeseroni/pipesX.sh
 

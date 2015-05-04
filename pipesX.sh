@@ -28,7 +28,7 @@ W=$(tput cols) H=$(tput lines)
 # maximal random value + 1
 M=32768
 
-SETS=('╱╲' '/\')
+SETS=('╱╲' '/\' '..' 'oo' '\/')
 COLORS=(31 32 33 34 35 36 37)
 
 # default values
@@ -45,6 +45,7 @@ Options:
 
   -n [1-]     number of pipes. (Default: $N)
   -t [0-$((${#SETS[@]} - 1))]    types of pipes, can be used more than once. (Default: $T)
+  -t c[2chs]  custom type of pipes.
   -i [float]  piping interval or maze generation interval. (Default: $I)
   -P [0-100]  probability of a turning pipe or of \\ in maze generation. (Default: $P)
   -r [LIMIT]  reset after x characters, 0 if no limit. (Default: $R)
@@ -61,7 +62,12 @@ while getopts "n:t:i:P:r:RCXhv" arg; do
       ((N = OPTARG > 0 ? OPTARG : N))
       ;;
     t)
-      T+=($(((OPTARG >= 0 && OPTARG < ${#SETS[@]}) ? OPTARG : T)))
+      if [[ "$OPTARG" = c?? ]]; then
+        T+=(${#SETS[@]})
+        SETS+=("${OPTARG:1}")
+      else
+        T+=($(((OPTARG >= 0 && OPTARG < ${#SETS[@]}) ? OPTARG : T)))
+      fi
       ;;
     i)
       I=$OPTARG

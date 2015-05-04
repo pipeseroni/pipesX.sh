@@ -93,6 +93,34 @@ Types of pipes, can be used more than once (Default: 0).
 |          |                               |
 |          | .. figure:: doc/pipesX.t1.png |
 +----------+-------------------------------+
+| ``-t 2`` | ``..``                        |
+|          |                               |
+|          | .. figure:: doc/pipesX.t2.png |
++----------+-------------------------------+
+| ``-t 3`` | ``oo``                        |
+|          |                               |
+|          | .. figure:: doc/pipesX.t3.png |
++----------+-------------------------------+
+| ``-t 4`` | ``\/``                        |
+|          |                               |
+|          | .. figure:: doc/pipesX.t4.png |
++----------+-------------------------------+
+
+``-t c[2 chars]``
+-----------------
+
+Custom pipe, for example: ``-t cR2 -t cD2``.
+
+.. note on taking the screenshot
+
+  Font is Inconsolata, font size 24 as in 16x35 pixel per character
+
+  Image size is 640x140. A sample command, where terminal at +0+18,
+  window border is 2, terminal is urxvt, seems to 2 pixels as padding:
+
+  xsnap -region 640x140+$((2+2))+$((20+2)) -file doc/pipesX.tc.png
+
+.. figure:: doc/pipesX.tc.png
 
 ``-i [float]``
 --------------
