@@ -194,14 +194,12 @@ Print version number.
 Controls
 ========
 
-Press any key to exit, except in Bash < 4, Control + C to exit.
+Press any key to exit, except in Bash < 4, :kbd:`Ctrl+C` to exit.
 
 
 Copyright
 =========
 
-pipesX.sh is licensed under `the MIT License`__::
+pipesX.sh is licensed under the MIT License, see LICENSE_.
 
-  Copyright (C) 2013, 2014 by Yu-Jie Lin
-
-__ LICENSE
+.. _LICENSE: LICENSE
